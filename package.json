@@ -2,8 +2,10 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is the bundle to become expert in React",
-  "main": "App.js",
+ 
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
