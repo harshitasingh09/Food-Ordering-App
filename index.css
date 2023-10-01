@@ -47,3 +47,8 @@ margin: 10px;
     height: 150px;
     border: 1px;
 }
+.filter-btn{
+    margin: 10px;
+    color: black;
+    cursor: pointer;
+}

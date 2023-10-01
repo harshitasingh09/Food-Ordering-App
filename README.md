@@ -34,3 +34,13 @@
 # Components
 - Class based component - older way
 - functional component - just a normal javasrcipt function that return jsx.
+
+# Hooks
+- normal javascript functions.
+- utilities- reasy to use
+- useState: gives react variables to manage the updates made by events.
+
+
+# useState
+- as soon as the react find the "state" is updated it starts the diff algo abd compare the old virtual DOM and New virtual DOM and rerender the DOM.
+- this state is updated with the use of set method provided by useState hook.
