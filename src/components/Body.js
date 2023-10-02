@@ -29,10 +29,10 @@ const Body = () => {
 
   const handleFilter = () => {
     const newRestaurant = listOfRestaurant.filter(
-      (res) => res.info.avgRating > 4.1
+      (res) => res.info.avgRating > 4
     );
     console.log(newRestaurant);
-    setListOfRestaurant(newRestaurant);
+    setFilteredRestaurant(newRestaurant);
   };
 
   const handlefilteredRestaurant=()=>{

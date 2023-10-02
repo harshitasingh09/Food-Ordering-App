@@ -45,3 +45,16 @@
 - as soon as the react find the "state" is updated it starts the diff algo abd compare the old virtual DOM and New virtual DOM and rerender the DOM.
 - this state is updated with the use of set method provided by useState hook.
 - whenever a state of a component get updated, react triggers a reconciliation cycle(rerenders the component).
+
+# useEffect
+- if no dependency in the useEffect, it is called on every render
+- if the dependency array is empty [], then useEffect is called on only for initial render.
+- if the depencency array is there, the useEffect would be called as many time there would be any change in dependency array.
+
+# Link- (given by react router dom)
+- navigate to next page without reloading the page
+
+
+# Routing types
+- Server Side Routing
+- client Side Routing
