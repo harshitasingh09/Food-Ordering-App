@@ -44,3 +44,4 @@
 # useState
 - as soon as the react find the "state" is updated it starts the diff algo abd compare the old virtual DOM and New virtual DOM and rerender the DOM.
 - this state is updated with the use of set method provided by useState hook.
+- whenever a state of a component get updated, react triggers a reconciliation cycle(rerenders the component).
