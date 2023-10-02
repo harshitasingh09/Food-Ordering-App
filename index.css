@@ -52,3 +52,30 @@ margin: 10px;
     color: black;
     cursor: pointer;
 }
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    padding: 10px;
+    width: 200px;
+    height: 300px;
+    margin:10px;
+    background-color: #f0f0f0;
+}
+
+.login{
+    padding: 10px;
+    width: 100px;
+    margin:auto;
+    margin-right: 20px;
+}
+
+.shimmer-btn{
+    margin: 10px;
+    width: 200px;
+    height:20px;
+    color: black;
+  
+}
