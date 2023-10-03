@@ -82,3 +82,13 @@ margin: 10px;
 .btn{
     display: flex;
 }
+
+.res-menu{
+    align-items: center;
+    border: 1px solid black;
+}
+
+.menu > h1{
+    align-items: center;
+    
+}
