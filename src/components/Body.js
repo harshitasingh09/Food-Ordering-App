@@ -1,16 +1,14 @@
 import RestaurantCard from "./ReastaurantCard";
-import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import SearchBox from "./SearchBox";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/Hooks/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  const [filteredRestaurant,setFilteredRestaurant]= useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
- 
   useEffect(() => {
     fetchData();
   }, []);
@@ -24,7 +22,7 @@ const Body = () => {
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     console.log(shortedData);
-    setListOfRestaurant(shortedData,"all");
+    setListOfRestaurant(shortedData, "all");
     setFilteredRestaurant(shortedData);
   };
 
@@ -36,10 +34,17 @@ const Body = () => {
     setFilteredRestaurant(newRestaurant);
   };
 
-  const handlefilteredRestaurant=()=>{
-const result = listOfRestaurant.filter((res)=>(res.info.name.toLowerCase().includes(searchText.toLowerCase())));
-console.log(result);
-setFilteredRestaurant(result);
+  const handlefilteredRestaurant = () => {
+    const result = listOfRestaurant.filter((res) =>
+      res.info.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    console.log(result);
+    setFilteredRestaurant(result);
+  };
+  const onlineStatus =useOnlineStatus();
+   if (onlineStatus=== false){
+     return(
+     <h1> it seems you are offline</h1>);
   }
 
   return listOfRestaurant.length === 0 ? (
@@ -58,12 +63,7 @@ setFilteredRestaurant(result);
               console.log(searchText);
             }}
           />
-          <button
-            className="search-btn"
-            onClick={
-              handlefilteredRestaurant
-            }
-          >
+          <button className="search-btn" onClick={handlefilteredRestaurant}>
             Search
           </button>
           {/* <SearchBox /> */}
@@ -74,7 +74,13 @@ setFilteredRestaurant(result);
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-         <Link to={'/restaurants/'+restaurant.info.id} key={restaurant.info.id}> <RestaurantCard  resData={restaurant} /></Link>
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            {" "}
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </>

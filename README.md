@@ -58,3 +58,8 @@
 # Routing types
 - Server Side Routing
 - client Side Routing
+
+# Optimisation of app
+- coustom hook
+- lazy Loading // chunking// dynamic import
+- single responsiblility
