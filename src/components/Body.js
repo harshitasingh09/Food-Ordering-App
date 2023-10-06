@@ -41,10 +41,9 @@ const Body = () => {
     console.log(result);
     setFilteredRestaurant(result);
   };
-  const onlineStatus =useOnlineStatus();
-   if (onlineStatus=== false){
-     return(
-     <h1> it seems you are offline</h1>);
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <h1> it seems you are offline</h1>;
   }
 
   return listOfRestaurant.length === 0 ? (
@@ -52,37 +51,46 @@ const Body = () => {
   ) : (
     <>
       <div className="body">
-        <div className="btn">
+        <div className="m-4 p-4 flex">
           <input
             type="text"
             placeholder="seacrh for taste"
-            className="search-box"
+            className="placeholder:italic placeholder:text-slate-400 block bg-white w-100 border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
               console.log(searchText);
             }}
           />
-          <button className="search-btn" onClick={handlefilteredRestaurant}>
+
+          <button
+            className="rounded-full border bg-slate-400 w-40"
+            onClick={handlefilteredRestaurant}
+          >
             Search
           </button>
           {/* <SearchBox /> */}
-          <button className="filter-btn" onClick={handleFilter}>
+          <button
+            className="rounded-full border bg-slate-400 w-80"
+            onClick={handleFilter}
+          >
             Top Rated Reastaurants
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="  flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
+          
           >
             {" "}
             <RestaurantCard resData={restaurant} />
           </Link>
         ))}
       </div>
+      
     </>
   );
 };

@@ -27,7 +27,7 @@ class Slogan extends Component {
       <>
         <div className="Slogan">{slogan}</div>
         <h1>Count: {this.state.count}</h1>
-        <button onClick={()=>{this.setState({
+        <button className="rounded-full border bg-slate-300 w-20" onClick={()=>{this.setState({
             count:this.state.count +1
         })}}>Click me</button>
       </>

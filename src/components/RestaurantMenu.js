@@ -19,17 +19,17 @@ const ReastaurantMenu = () => {
 
   return (
     <>
-      <div className="res-menu">
-        <div className="menu">
-          <h1>{name}</h1>
+      <div className="m-[50px] p-[50px]">
+        <div className="m-4 p-4 w-[600px] ">
+          <h1 className="font-bold py-1 px-1 ">{name}</h1>
           <h3>
             {cuisines.join(",")} : {costForTwoMessage}
           </h3>
           <h3>Rating: *{avgRating}</h3>
           <h2>Menu</h2>
-          <ul>
+          <ul className=" border-dashed">
             {itemCards.map((item) => (
-              <li key={item.card.info.id}>
+              <li className="menu-item border-b border-gray-400 pb-4 mb-4" key={item.card.info.id}>
                 {item.card.info.name} -<b> Rs.</b>
                 {item.card.info.price / 100 ||
                   item.card.info.defaultPrice / 100}
