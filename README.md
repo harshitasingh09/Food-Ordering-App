@@ -63,3 +63,6 @@
 - coustom hook
 - lazy Loading // chunking// dynamic import
 - single responsiblility
+
+# Higher Order Components
+- they are normal javascript function that take other component as input(props) and return a new component with enhanced features or functionality.

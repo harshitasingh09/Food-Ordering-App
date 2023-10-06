@@ -1,4 +1,4 @@
-import RestaurantCard from "./ReastaurantCard";
+import RestaurantCard, { pureVeg } from "./ReastaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  const VegRestaurant = pureVeg(RestaurantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -21,7 +21,7 @@ const Body = () => {
     const shortedData =
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    console.log(shortedData);
+    console.log(shortedData,"list");
     setListOfRestaurant(shortedData, "all");
     setFilteredRestaurant(shortedData);
   };
@@ -83,14 +83,12 @@ const Body = () => {
           <Link
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
-          
           >
-            {" "}
-            <RestaurantCard resData={restaurant} />
+            {console.log(restaurant.info.veg,'restaurant.info.veg')}
+            {restaurant.info.veg?(<VegRestaurant resData={restaurant}/>): (<RestaurantCard resData={restaurant} />)}
           </Link>
         ))}
       </div>
-      
     </>
   );
 };
