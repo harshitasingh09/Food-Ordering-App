@@ -6,7 +6,7 @@ import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import AboutUs from './components/AboutUs';
 import ContactUs  from './components/ContactUs';
 import Error from './components/Error';
-import ReastaurantMenu from './components/RestaurantMenu';
+import ReastaurantMenu from './Restaurant/RestaurantMenu';
 
 
 
