@@ -1,8 +1,15 @@
 
+import { addItem } from "../utils/Store/cartSlice";
 import { CDN_LINK } from "../utils/constants";
+import { useDispatch } from "react-redux";
 
 const AccordianItemList = ({ items }) => {
 
+const dispatch= useDispatch();
+
+  const handleAddItem =(item)=>{
+    dispatch(addItem(item))
+   }
 
   return (
     <div>
@@ -24,7 +31,12 @@ const AccordianItemList = ({ items }) => {
              <div className="w-3/12 p-4 relative">
                 <img className="w-28 h-auto" src={CDN_LINK+ item.card.info.imageId}/>
                 <div className="absolute">
-                <button className="p-2 bg-white shadow-lg mx-10 absolute rounded-lg">Add+</button>
+                <button 
+                className="p-2 bg-white shadow-lg mx-10 absolute rounded-lg"
+                onClick={()=>handleAddItem(item)}
+                >
+                  Add+
+                </button>
                 </div>
              </div>
            </div>

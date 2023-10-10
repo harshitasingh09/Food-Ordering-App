@@ -78,4 +78,18 @@
  - hooks(useContext)
  - context.consumer(class component)
 
- 
+ # Redux tool kit 
+ - State management library.
+ - app easier to debug
+ - react-redux library: bridge between react and redux.
+ - react toolkit: newer way(vanilla redux : older)
+
+- store:
+
+ - slices: logical separation of code in redux store. 
+ - dispatch: dispatches action and action calls a function(reducer).===> writing data
+ - selector: reads the data from store(subscribing to store). ===> reading
+
+ # hooks by react redux
+ - useSelector:
+ - useDispatch: 

@@ -4,17 +4,17 @@ import {Link} from 'react-router-dom'
 import useOnlineStatus from "../utils/Hooks/useOnlineStatus";
 import { ONLINE_LOGO,OFFLINE_LOGO } from "../utils/constants";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loginButton, setLoginButton]= useState('Login');
   const onlineStatus= useOnlineStatus();
   const {loggedInUser}= useContext(UserContext);
-  //console.log(userName,'userName');
+  const cartItems = useSelector((store)=>(store.cart.items));
+  console.log(cartItems,'cartItems');
 
   const handleLogin=()=>{
    return loginButton==='Login'? setLoginButton('Logout'): setLoginButton('Login');
-   
-    
   }
  
     return (
@@ -32,7 +32,7 @@ const Header = () => {
             <li className="m-1 p-2"><Link to='/about'>About Us</Link></li>
             <li className="m-1 p-2"><Link to='/contact'>Contact Us</Link></li>
             <li className="m-1 p-2"><Link to='/grocery'>Grocery</Link></li>
-            <li className="m-1 p-2">Cart</li>
+            <li className="m-1 p-2"> <Link to='/cart'>Cart-{cartItems.length}</Link></li>
             <button className=" border bg-orange-400 w-20 h-10" onClick={handleLogin}>{loginButton}</button>
            <li>{loggedInUser}</li>
           </ul>
