@@ -71,3 +71,11 @@
 - managing state of children from parent component.
 - State lifting helps maintain a single source of truth for the data, making it more predictable and easier to manage
 - this often leads to controlled component as parent is ms=anaging children component's state.
+
+# context
+- allows you to pass data through the component tree without having to pass props manually at every level.
+- context can be used by two ways:-
+ - hooks(useContext)
+ - context.consumer(class component)
+
+ 

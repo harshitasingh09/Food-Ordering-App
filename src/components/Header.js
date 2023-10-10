@@ -1,21 +1,22 @@
 import { LOGO_LINK } from "../utils/constants";
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import {Link} from 'react-router-dom'
 import useOnlineStatus from "../utils/Hooks/useOnlineStatus";
 import { ONLINE_LOGO,OFFLINE_LOGO } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [loginButton, setLoginButton]= useState('Login');
   const onlineStatus= useOnlineStatus();
+  const {loggedInUser}= useContext(UserContext);
+  //console.log(userName,'userName');
 
   const handleLogin=()=>{
    return loginButton==='Login'? setLoginButton('Logout'): setLoginButton('Login');
-
-   useEffect(()=>{
-
-   },[])
+   
     
   }
+ 
     return (
       <div className="flex justify-between bg-purple-300 shadow-lg">
         <div className="m-4">
@@ -33,6 +34,7 @@ const Header = () => {
             <li className="m-1 p-2"><Link to='/grocery'>Grocery</Link></li>
             <li className="m-1 p-2">Cart</li>
             <button className=" border bg-orange-400 w-20 h-10" onClick={handleLogin}>{loginButton}</button>
+           <li>{loggedInUser}</li>
           </ul>
         </div>
       </div>
