@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import AccordianItemList from "./AccordianItemList";
 
-const RestaurantItemCategory = ({ data }) => {
+const RestaurantItemCategory = ({ data, showItem ,setShowIndex}) => {
   
-  const [showItem, setShowItem]=useState(false);
+  
 
   const handleClick=()=>{
-    setShowItem(!showItem);
+   setShowIndex();
   }
 
   return (

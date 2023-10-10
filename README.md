@@ -66,3 +66,8 @@
 
 # Higher Order Components
 - they are normal javascript function that take other component as input(props) and return a new component with enhanced features or functionality.
+
+# State Lifting
+- managing state of children from parent component.
+- State lifting helps maintain a single source of truth for the data, making it more predictable and easier to manage
+- this often leads to controlled component as parent is ms=anaging children component's state.
