@@ -83,7 +83,7 @@
  - app easier to debug
  - react-redux library: bridge between react and redux.
  - react toolkit: newer way(vanilla redux : older)
-
+ - rkt : state should be mutated
 - store:
 
  - slices: logical separation of code in redux store. 
@@ -93,3 +93,16 @@
  # hooks by react redux
  - useSelector:
  - useDispatch: 
+
+# Types of Testing
+- unit testing: testing in isolation.(one component at a time)
+- integration testing: (testing the integrated , multiple components)
+- end to end testing: testing all the flows. tools r needed 
+
+# Testing libraries
+- react testing library 
+- jest
+- configure babel
+- .parcelrc
+- configure jest: npx jest --init
+- install dependency for react testing library + jest
