@@ -106,3 +106,6 @@
 - .parcelrc
 - configure jest: npx jest --init
 - install dependency for react testing library + jest
+- @babel/preset-react install for jsx to execute
+- preset in babel.config
+- install @testing-library/jest-dom

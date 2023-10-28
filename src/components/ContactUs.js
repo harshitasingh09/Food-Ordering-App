@@ -6,7 +6,7 @@ const ContactUs=()=>{
     return(
         <>
         <div className="contact">
-            <div> hi...!!! {loggedInUser}</div>
+            <><h1> hi...!!! {loggedInUser}</h1></>
             <div>
                 please contact us for more queries.!!!
 
